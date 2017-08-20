@@ -1,0 +1,80 @@
+{
+  "name": "densio",
+  "version": "1.0.0",
+  "description": "densio web/responsive",
+  "private": true,
+  "engines": {
+    "node": ">=4.5.0",
+    "npm": "^3.0.0"
+  },
+  "scripts": {
+    "build": "npm run build-css && react-scripts build",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "codecov": "cat coverage/*/lcov.info | codecov",
+    "eject": "react-scripts eject",
+    "install-typedefs": "flow-typed install",
+    "lint": "eslint bin build config server src tests",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/app/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/app/__mocks__/styleMock.js"
+    },
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "better-npm-run": "0.0.13",
+    "codecov": "^1.0.1",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb-flow": "^1.0.2",
+    "eslint-plugin-flowtype": "^2.32.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.51.1",
+    "flow-typed": "^2.1.5",
+    "jest": "^20.0.3",
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "^15.5.4"
+  },
+  "dependencies": {
+    "algebrite": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "classnames": "^2.2.5",
+    "firebase-tools": "^3.9.2",
+    "lodash": "^4.17.4",
+    "node-sass-chokidar": "^0.0.3",
+    "normalize.css": "^7.0.0",
+    "qs": "^6.4.0",
+    "raven-js": "^3.15.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
+    "react-intl": "^2.3.0",
+    "react-modal": "^1.7.7",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "recharts": "^1.0.0-alpha.3",
+    "redux": "^3.6.0",
+    "redux-persist": "^4.8.2",
+    "redux-thunk": "^2.2.0"
+  }
+}

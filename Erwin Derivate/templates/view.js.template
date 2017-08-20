@@ -1,0 +1,26 @@
+// @flow
+
+import React from 'react';
+import { FormattedMessage, injectIntl } from 'react-intl';
+
+import './style.css';
+
+import {
+  Button,
+} from '../../components';
+
+type Props = {
+};
+
+const HomeView = ({
+  intl,
+}: Props) => (
+  <div className='home'>
+    <FormattedMessage
+      id='home.hello-world'
+    />
+    {AppName}
+  </div>
+);
+
+export default injectIntl(HomeView);

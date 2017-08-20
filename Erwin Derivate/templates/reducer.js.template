@@ -1,0 +1,18 @@
+// @flow
+
+import type { Action, ExampleState } from '../types';
+import withLogout from './higher-order/logout';
+
+type State = ExampleState;
+
+const initialState = {
+};
+
+function reducer(state: State = initialState, action: Action = { type: 'NOOP' }) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+
+export default withLogout(reducer);

@@ -1,0 +1,32 @@
+{
+  "extends": ["airbnb"],
+  "rules": {
+    "global-require": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/jsx-filename-extension": "off",
+    "react/sort-comp": ["error", {
+      order: [
+        '/props/',
+        '/state/',
+        'static-methods',
+        'lifecycle',
+        'render',
+        'everything-else'
+      ]
+    }],
+    "no-underscore-dangle": "off"
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "__DEV__": true,
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "afterAll": true,
+    "afterEach": true,
+    "beforeAll": true,
+    "beforeEach": true
+  },
+}

@@ -1,0 +1,45 @@
+// @flow
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import type {
+  Dispatch,
+  MapStateToProps,
+  MapDispatchToProps,
+  State,
+} from '../types';
+
+import HomeView from '../views/home';
+
+type Props = {
+
+};
+
+type ContainerState = {
+
+};
+
+const mapStateToProps: MapStateToProps<Props> = (state: State) => ({
+
+});
+
+const mapDispatchToProps: MapDispatchToProps<Props> = (dispath: Dispatch) => ({
+
+});
+
+class LoginContainer extends Component {
+  props: Props;
+  state: ContainerState;
+
+  render() {
+    return (
+      <HomeView
+        {...this.props}
+        {...this.state}
+      />
+    );
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
